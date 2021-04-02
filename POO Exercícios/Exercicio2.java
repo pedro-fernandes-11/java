@@ -5,7 +5,6 @@ public class Exercicio2 {
 	public static void main(String[] args) {
 		class Arrays{
 			public int[] st_array;
-			public int[] nd_array = new int[10];
 			public Arrays(int[] first) {
 				this.st_array = first;
 			}
@@ -14,12 +13,12 @@ public class Exercicio2 {
 					System.out.print(this.st_array[i]+" ");
 				}
 			}
-			public void printSecond() {
+			public void printModified() {
 				for(int i = 0;i < this.st_array.length;i++) {
-					this.nd_array[i] = this.st_array[i] + this.returnArray(i);
+					this.st_array[i] = this.st_array[i] + this.returnArray(i);
 				}
-				for(int i = 0;i < this.nd_array.length;i++) {
-					System.out.print(this.nd_array[i]+" ");
+				for(int i = 0;i < this.st_array.length;i++) {
+					System.out.print(this.st_array[i]+" ");
 				}
 			}
 			public int returnArray(int i) {	
@@ -27,9 +26,9 @@ public class Exercicio2 {
 				if(act_i < 0) {
 					return 0;
 				}else if(act_i == 0) {
-					return this.nd_array[0];
+					return this.st_array[0];
 				}else {
-					return this.nd_array[act_i] + this.returnArray(act_i);
+					return this.st_array[act_i] + this.returnArray(act_i);
 				}
 			}
 		}
@@ -43,6 +42,6 @@ public class Exercicio2 {
 		exercise.printFirst();
 		System.out.print("\n");
 		System.out.print("Modified array: ");
-		exercise.printSecond();
+		exercise.printModified();
 	}
 }
