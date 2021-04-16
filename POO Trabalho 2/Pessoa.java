@@ -4,6 +4,11 @@ public class Pessoa {
 	protected String nome;
 	protected String endereco;
 	
+	public Pessoa(String nome, String endereco){
+		this.nome = nome;
+		this.endereco = endereco;
+	}
+	
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
